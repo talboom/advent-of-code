@@ -20,22 +20,18 @@ def valid_id2(id):
         
 data = read_input("day2.txt")
 
-ranges =  [d.split('-') for d in data[0].split(',')]
+ranges = [[int(x) for x in d.strip().split('-')] for d in data[0].strip().split(',')]
 
 sum_part1 = 0
 for r in ranges:
-  r1 = int(r[0])
-  r2 = int(r[1])
-  for n in range(r1,r2+1):
+  for n in range(r[0],r[1]+1):
     sum_part1 += n * (valid_id(n))
 
 print(sum_part1)
 
 sum_part2 = 0
 for r in ranges:
-  r1 = int(r[0])
-  r2 = int(r[1])
-  for n in range(r1,r2+1):
+  for n in range(r[0],r[1]+1):
     sum_part2 += n * (valid_id2(n))
 
 print(sum_part2)
