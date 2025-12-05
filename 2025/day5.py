@@ -18,7 +18,7 @@ def stitch(ranges):
   ranges_stitched.append((start_new,end_prev))
   return ranges_stitched
 
-
+# Read data
 data = read_input("day5.txt")
 
 first_section = True
@@ -34,6 +34,7 @@ for d in data:
   else:
     ids.append(int(d))
 
+# stitch
 ranges = stitch(ranges)
 
 # part 1
